@@ -33,7 +33,6 @@
     </head>
 
     <body>
-    ITS WORKIIINNNNGGG!!!!
         <!-- Status: Shows if the subscription succeeded or not. -->
         <div id="loading">
             <span class="status icon"></span>

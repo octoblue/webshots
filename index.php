@@ -32,7 +32,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
     </head>
 
-    <body>
+    <body>test
         <!-- Status: Shows if the subscription succeeded or not. -->
         <div id="loading">
             <span class="status icon"></span>

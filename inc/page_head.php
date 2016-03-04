@@ -2,7 +2,7 @@
 <div class="content-header">
     <ul class="nav-horizontal text-center">
         <li>
-            <a href="/webshots/index.php"><i class="fa fa-home"></i> Home</a>
+            <a href="index.php"><i class="fa fa-home"></i> Home</a>
         </li>
         <li>
             <a href="order.php"><i class="gi gi-shoe_steps"></i> new Order</a>

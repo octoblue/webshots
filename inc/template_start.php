@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>Compushop</title>
+        <title>POS</title>
 
         <meta name="description" content="Compushop">
         <meta name="author" content="Webshots">

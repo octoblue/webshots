@@ -82,4 +82,15 @@ switch($action){
         mysqli_query($conn, $sql);
         header('location : /client.php?clientId=' . mysqli_insert_id($conn));
         break;
+
+    case 'insert_stock':
+        $sql = "INSERT INTO `stock`(`name`, `barcode`, `serial`, `description`, `cost`, `sell`, `quantity`, `supplier`) VALUES (
+                '" . $_REQUEST['name'] . "', '" . $_REQUEST['barcode'] . "', '" . $_REQUEST['serial'] . "', '" . $_REQUEST['description'] . "',
+                '" . $_REQUEST['cost'] . "', '" . $_REQUEST['sell'] . "', '" . $_REQUEST['quant'] . "', '" . $_REQUEST['supplier'] . "'
+                )";
+
+        mysqli_query($conn, $sql);
+        header('location : /orders.php');
+
+        break;
 }

@@ -7,13 +7,13 @@
  * Configuration file. It contains variables used in the template as well as the primary navigation array from which the navigation is created
  *
  */
-include_once('db.php');
-include_once('invoices.php');
-include_once('clients.php');
-include_once('suppliers.php');
-include_once('stock.php');
-include_once('products.php');
-include_once('sales.php');
+include_once('/inc/db.php');
+include_once('/inc/invoices.php');
+include_once('/inc/clients.php');
+include_once('/inc/suppliers.php');
+include_once('/inc/stock.php');
+include_once('/inc/products.php');
+include_once('/inc/sales.php');
 $conn = Db::dbConnect();
 if(isset($_SESSION['user'])){
     $user = $_SESSION['user'];

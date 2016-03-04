@@ -7,7 +7,7 @@ class Db {
     public static function dbConnect(){
         $servername = "localhost";
         $username = "rabihtouma";
-        $password = "Mallifa10";
+        $password = "Calamari01";
         $dbname = "compushop";
 
 // Create connection

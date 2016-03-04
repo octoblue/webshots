@@ -81,7 +81,7 @@
         </div>
         <div class="col-sm-6 col-lg-3">
             <!-- Widget -->
-            <a href="page_comp_gallery.php" class="widget widget-hover-effect1">
+            <a href="clients.php" class="widget widget-hover-effect1">
                 <div class="widget-simple">
                     <div class="widget-icon pull-left themed-background-autumn animation-fadeIn">
                         <i class="gi gi-user"></i>

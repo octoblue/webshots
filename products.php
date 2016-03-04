@@ -4,7 +4,7 @@
 
 <div id="page-content" style="margin-top: -20px; min-height: 1000px;">
 
-    <a href="/webshots/index.php" class="timeline-icon" style="font-size: 20px"><i class="fa fa-home"></i>Home</a>
+    <a href="/index.php" class="timeline-icon" style="font-size: 20px"><i class="fa fa-home"></i>Home</a>
     <!-- Quick Stats -->
     <div class="row text-center">
         <div class="col-sm-6 col-lg-3">

@@ -5,7 +5,7 @@
 
 
 <div id="page-content" style="margin-top: -20px; min-height: 1000px;">
-    <a href="/webshots/index.php" class="timeline-icon" style="font-size: 20px"><i class="fa fa-home"></i>Home</a>
+    <a href="/index.php" class="timeline-icon" style="font-size: 20px"><i class="fa fa-home"></i>Home</a>
     <div class="row text-center" style="margin:0 0 10px 0">
         <form>
     <div class="col-sm-12 col-lg-12">

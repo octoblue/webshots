@@ -14,6 +14,7 @@ include_once('suppliers.php');
 include_once('stock.php');
 include_once('products.php');
 include_once('sales.php');
+$conn = Db::dbConnect();
 if(isset($_SESSION['user'])){
     $user = $_SESSION['user'];
     $pass = $_SESSION['pass'];

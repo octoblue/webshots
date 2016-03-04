@@ -5,7 +5,6 @@
 <?php
 $clients = Client::getClients();
 ?>
-
 <div id="page-content" style="margin-top: -20px; min-height: 1000px;">
     <?php include 'inc/page_head.php'; ?>
     <div class="row text-center">

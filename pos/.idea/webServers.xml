@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cba0700e-1cc7-466f-b413-b82489b59cfd" name="pos" url="http://23.229.195.164">
+        <fileTransfer host="23.229.195.164" port="21" rootFolder="/webshots.me/pos" password="dfe7dfcbdfc6dfc6dfc3dfccdfcbdf9bdf9a" username="admin@e-fitlebanon.com">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

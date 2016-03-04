@@ -1,95 +1,124 @@
-<!DOCTYPE html> 
-<html dir="ltr" lang="en-US">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-61366076-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-        <!-- Title: Change the title and description to suit your needs. -->
-        <title>WebShots</title>
-        <meta name="description" content="A simple “Coming Soon” template including the perfect mix of design, information and social options.">
-
-        <!-- Viewport Meta: Just taming mobile devices like iPads and iPhones. -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"/>
-
-        <!-- Google Fonts: The default font for this template. -->
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
-
-        <!-- Styles: The primary styles for this template. -->
-        <link rel="stylesheet" type="text/css" href="assets/styles/normalize.css">
-        <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
-        <link rel="stylesheet" type="text/css" href="assets/styles/responsive.css">
-        <link rel="stylesheet" type="text/css" href="assets/styles/theme.css">
-
-        <!-- Favicon: Change to whatever you like within the "assets/images" folder. -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
-    </head>
-
-    <body>
-        <!-- Status: Shows if the subscription succeeded or not. -->
-        <div id="loading">
-            <span class="status icon"></span>
-        </div>
-        
-        <!-- Header: Your site logo, tagline and project status. -->
-        <header class="row" id="header">
-            <div class="content">
-                <!-- Logo & Tagline: Delete "class="logo"" to remove the logo or upload your own logo to "assets/images". -->
-                <span class="logo"><b style="color:#00E2FF">Web</b><b>Shots</b></span>
-            </div>
-
-            <!-- Status: Change the numbers below to reflect your project status. -->
-            <div class="status" style="width: 30%;">
-                <span>30%</span>
-            </div>
-        </header>
-        <!-- Intro: Your intro text and MailChimp form. -->
-        <div class="row" id="intro">
-            <div class="content">
-                <!-- Pre-Submission: This is what displayed before the subscription form has been submitted. -->
-                <div id="pre-subscribe">
-                    <div class="row" id="copy">
-                        <h1>Coming soon to build your <strong>WebShots</strong>.</h1>
-                        <p>
-                        We deliver custom web design, development and graphic design beside a full social media marketing management.<br>
-                        Fill in your email to subscribe to our newsletter or send us an email on info@webshots.me if you have any more questions.
-                        </p>
-                    </div>
-
-                    <div class="row" id="subscribe">
-                        <!-- Subscription Form: Configure your MailChimp settings within settings.php. -->
-                        <form class="row" id="mailchimp" action="mail.php" method="post">
-                        	<input type="email" name="email" id="email" placeholder="you@youremail.com">
-                        	<button type="submit" name="subscribe" class="button icon submit"></button>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Post Subscription: This is what’s displayed after the subscription form has been submitted.  -->
-                <div id="post-subscribe">
-                    <div class="row" id="copy">
-                        <h1>Thanks for <strong>signing up</strong>. Check your email to <strong>confirm</strong> your subscription.</h1>
-                    </div>
-                </div>
-
-                <!-- Social Links: Add or remove your social links here. -->
-                <div class="row" id="social">
-                    <a class="icon twitter" href="http://twitter.com/web_shots"></a>
-                    <a class="icon facebook" href="http://facebook.com/1379061025752890"></a>
-                    <a class="icon email" href="tel:+9613696865"></a>
+<?php include 'inc/db.php';?>
+<?php include 'inc/config.php'; ?>
+<?php include 'inc/template_start.php'; ?>
+<!-- Page content -->
+<div id="page-content">
+    <!-- Dashboard Header -->
+    <!-- For an image header add the class 'content-header-media' and an image as in the following example -->
+    <div class="content-header content-header-media">
+        <div class="header-section">
+            <div class="row">
+                <!-- Main Title (hidden on small devices for the statistics to fit) -->
+                <div class="col-md-4 col-lg-6 hidden-xs hidden-sm">
+                    <h1>Welcome <strong><?php echo($_SESSION['user']); ?></strong><br><small>Have a nice day!</small></h1>
                 </div>
             </div>
         </div>
+        <!-- For best results use an image with a resolution of 2560x248 pixels (You can also use a blurred image with ratio 10:1 - eg: 1000x100 pixels - it will adjust and look great!) -->
+        <img src="img/placeholders/headers/dashboard_header.jpg" alt="header image" class="animation-pulseSlow">
+    </div>
+    <!-- END Dashboard Header -->
 
-        <!-- Required Scripts: Not too much needed for Launch. -->
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <script src="assets/scripts/main.js"></script>
-    </body>
-</html>
+    <!-- Mini Top Stats Row -->
+    <div class="row">
+        <div class="col-sm-6 col-lg-3">
+            <!-- Widget -->
+            <a href="page_ecom_dashboard.php" class="widget widget-hover-effect1">
+                <div class="widget-simple">
+                    <div class="widget-icon pull-left themed-background-spring animation-fadeIn">
+                        <i class="gi gi-usd"></i>
+                    </div>
+                    <h3 class="widget-content text-right animation-pullDown">
+                        <strong>250$</strong><br>
+                        <small>Sales Today</small>
+                    </h3>
+                </div>
+            </a>
+            <!-- END Widget -->
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <!-- Widget -->
+            <a href="reports.php" class="widget widget-hover-effect1">
+                <div class="widget-simple">
+                    <div class="widget-icon pull-left themed-background-fire animation-fadeIn">
+                        <i class="gi gi-more_items"></i>
+                    </div>
+                    <h3 class="widget-content text-right animation-pullDown">
+                        5 <strong>Items</strong>
+                        <small>Reports</small>
+                    </h3>
+                </div>
+            </a>
+            <!-- END Widget -->
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <!-- Widget -->
+            <a href="order.php" class="widget widget-hover-effect1">
+                <div class="widget-simple">
+                    <div class="widget-icon pull-left themed-background-amethyst animation-fadeIn">
+                        <i class="gi gi-sort-by-order"></i>
+                    </div>
+                    <h3 class="widget-content text-right animation-pullDown">
+                        New <strong>Order</strong>
+                    </h3>
+                </div>
+            </a>
+            <!-- END Widget -->
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <!-- Widget -->
+            <a href="page_comp_gallery.php" class="widget widget-hover-effect1">
+                <div class="widget-simple">
+                    <div class="widget-icon pull-left themed-background-danger animation-fadeIn">
+                        <i class="gi gi-oxygen_bottle"></i>
+                    </div>
+                    <h3 class="widget-content text-right animation-pullDown">
+                        Insert <strong>Stock</strong>
+                    </h3>
+                </div>
+            </a>
+            <!-- END Widget -->
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <!-- Widget -->
+            <a href="page_comp_gallery.php" class="widget widget-hover-effect1">
+                <div class="widget-simple">
+                    <div class="widget-icon pull-left themed-background-autumn animation-fadeIn">
+                        <i class="gi gi-user"></i>
+                    </div>
+                    <h3 class="widget-content text-right animation-pullDown">
+                        <strong>Clients</strong>
+                    </h3>
+                </div>
+            </a>
+            <!-- END Widget -->
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <!-- Widget -->
+            <a href="suppliers.php" class="widget widget-hover-effect1">
+                <div class="widget-simple">
+                    <div class="widget-icon pull-left themed-background-dark-amethyst animation-fadeIn">
+                        <i class="gi gi-user"></i>
+                    </div>
+                    <h3 class="widget-content text-right animation-pullDown">
+                        <strong>Suppliers</strong>
+                    </h3>
+                </div>
+            </a>
+            <!-- END Widget -->
+        </div>
+    </div>
+<!-- Remember to include excanvas for IE8 chart support -->
+<!--[if IE 8]><script src="js/helpers/excanvas.min.js"></script><![endif]-->
+
+<?php include 'inc/template_scripts.php'; ?>
+
+<!-- Google Maps API + Gmaps Plugin, must be loaded in the page you would like to use maps -->
+<script src="//maps.google.com/maps/api/js?sensor=true"></script>
+<script src="js/helpers/gmaps.min.js"></script>
+
+<!-- Load and execute javascript code used only in this page -->
+<script src="js/pages/index.js"></script>
+<script>$(function(){ Index.init(); });</script>
+
+<?php include 'inc/template_end.php'; ?>

@@ -67,13 +67,13 @@
         </div>
         <div class="col-sm-6 col-lg-3">
             <!-- Widget -->
-            <a href="stock.php" class="widget widget-hover-effect1">
+            <a href="stocks.php" class="widget widget-hover-effect1">
                 <div class="widget-simple">
                     <div class="widget-icon pull-left themed-background-danger animation-fadeIn">
                         <i class="gi gi-oxygen_bottle"></i>
                     </div>
                     <h3 class="widget-content text-right animation-pullDown">
-                        Insert <strong>Stock</strong>
+                        <strong>Stock</strong>
                     </h3>
                 </div>
             </a>

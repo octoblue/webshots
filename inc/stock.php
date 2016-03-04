@@ -11,7 +11,7 @@ public function getStock($id){
 
     public static function stockSearch($barcode=false, $serial=false, $name=false){
         $conn = Db::dbConnect();
-        $sql = "SELECT * FROM stock WHERE ";
+        $sql = "SELECT * FROM stock WHERE";
         if($barcode !== false && $serial !== false && $name !== false){ $sql .= "barcode = '" . $barcode . "' AND serial = '" . $serial . "' AND name = '" . $name . "'";}
         elseif($barcode !== false && $serial !== false ){
             $sql .= "barcode = '" . $barcode . "' AND serial = '" . $serial;
@@ -22,6 +22,17 @@ public function getStock($id){
         }
         $query = mysqli_query($conn, $sql);
         return mysqli_fetch_object($query);
+    }
+
+    public static function getStocks(){
+        $conn = Db::dbConnect();
+        $sql = "SELECT * FROM stock ORDER BY id ASC";
+        $query = mysqli_query($conn, $sql);
+        $data = Array();
+        while($row = mysqli_fetch_object($query, 'Client')){
+            $data[] = $row;
+        }
+        return $data;
     }
 
 }

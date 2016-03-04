@@ -66,8 +66,8 @@
                     </td>
                 </tr>
                   <?php
-                    $total += $order['sell'];
-                    $totalCost += $order['cost'];
+                    $total += $order['sell'] * $order['quantity'];
+                    $totalCost += $order['cost'] * $order['quantity'];
                 }
             ?>
                 <tr>

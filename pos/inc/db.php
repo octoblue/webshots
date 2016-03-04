@@ -5,7 +5,7 @@ class Db {
      * @return mysqli
      */
     public static function dbConnect(){
-        $servername = "localhost";
+        $servername = "23.229.195.164";
         $username = "rabihtouma";
         $password = "Calamari01";
         $dbname = "compushop";

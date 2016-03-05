@@ -11,7 +11,7 @@ public function getStock($id){
 
     public static function stockSearch($barcode=false, $serial=false, $name=false){
         $conn = Db::dbConnect();
-        $sql = "SELECT * FROM stock WHERE";
+        $sql = "SELECT * FROM stock WHERE ";
         if($barcode !== false && $serial !== false && $name !== false){ $sql .= "barcode = '" . $barcode . "' AND serial = '" . $serial . "' AND name = '" . $name . "'";}
         elseif($barcode !== false && $serial !== false ){
             $sql .= "barcode = '" . $barcode . "' AND serial = '" . $serial;

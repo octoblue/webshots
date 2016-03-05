@@ -23,6 +23,21 @@
     <div class="row">
         <div class="col-sm-6 col-lg-3">
             <!-- Widget -->
+            <a href="order.php" class="widget widget-hover-effect1">
+                <div class="widget-simple">
+                    <div class="widget-icon pull-left themed-background-amethyst animation-fadeIn">
+                        <i class="gi gi-sort-by-order"></i>
+                    </div>
+                    <h3 class="widget-content text-right animation-pullDown">
+                        New <strong>Order</strong>
+                    </h3>
+                </div>
+            </a>
+            <!-- END Widget -->
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+            <!-- Widget -->
             <a href="page_ecom_dashboard.php" class="widget widget-hover-effect1">
                 <div class="widget-simple">
                     <div class="widget-icon pull-left themed-background-spring animation-fadeIn">
@@ -46,20 +61,6 @@
                     <h3 class="widget-content text-right animation-pullDown">
                         5 <strong>Items</strong>
                         <small>Reports</small>
-                    </h3>
-                </div>
-            </a>
-            <!-- END Widget -->
-        </div>
-        <div class="col-sm-6 col-lg-3">
-            <!-- Widget -->
-            <a href="order.php" class="widget widget-hover-effect1">
-                <div class="widget-simple">
-                    <div class="widget-icon pull-left themed-background-amethyst animation-fadeIn">
-                        <i class="gi gi-sort-by-order"></i>
-                    </div>
-                    <h3 class="widget-content text-right animation-pullDown">
-                        New <strong>Order</strong>
                     </h3>
                 </div>
             </a>

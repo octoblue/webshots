@@ -15,7 +15,15 @@ $ostock = mysqli_num_rows($oquery);
         <a href="/index.php" class="timeline-icon" style="font-size: 20px"><i class="fa fa-home"></i>Home</a>
 
         <div class="row text-center">
-            <div class="col-sm-6 col-lg-6">
+            <div class="col-sm-6 col-lg-4">
+                <a href="stock.php" class="widget widget-hover-effect2">
+                    <div class="widget-extra themed-background-success">
+                        <h4 class="widget-content-light"><strong>Insert</strong> Stock</h4>
+                    </div>
+                    <div class="widget-extra-full"><span class="h2 text-success animation-expandOpen"><i class="fa fa-plus"></i></span></div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-lg-4">
                 <a href="javascript:void(0)" class="widget widget-hover-effect2">
                     <div class="widget-extra themed-background">
                         <h4 class="widget-content-light"><strong>All</strong> Stocks</h4>
@@ -23,7 +31,7 @@ $ostock = mysqli_num_rows($oquery);
                     <div class="widget-extra-full"><span class="h2 animation-expandOpen"><?=count($stock)?></span></div>
                 </a>
             </div>
-            <div class="col-sm-6 col-lg-6">
+            <div class="col-sm-6 col-lg-4">
                 <a href="javascript:void(0)" class="widget widget-hover-effect2">
                     <div class="widget-extra themed-background-danger">
                         <h4 class="widget-content-light"><strong>Out Of</strong> Stock</h4>

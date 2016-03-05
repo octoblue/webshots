@@ -9,7 +9,7 @@ $clients = Client::getClients();
     <?php include 'inc/page_head.php'; ?>
     <div class="row text-center">
         <div class="col-sm-6 col-lg-3">
-            <a href="page_ecom_product_edit.php" class="widget widget-hover-effect2">
+            <a href="client_new.php" class="widget widget-hover-effect2">
                 <div class="widget-extra themed-background-success">
                     <h4 class="widget-content-light"><strong>Add New</strong> Client</h4>
                 </div>

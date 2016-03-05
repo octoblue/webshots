@@ -9,7 +9,7 @@
         <div class="block">
             <!-- Basic Form Elements Title -->
             <div class="block-title">
-                <h2><strong>Create New</strong> Client</h2>
+                <h2><strong>Create New</strong> Stock</h2>
             </div>
             <!-- END Form Elements Title -->
 

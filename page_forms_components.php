@@ -32,7 +32,7 @@
                 </div>
                 <!-- END Switches Title -->
 
-                <!-- Switches Content -->
+                <!-- Switches Contenslt -->
                 <form action="page_forms_components.php" method="post" class="form-horizontal form-bordered" onsubmit="return false;">
                     <!-- Switches are CSS based, so you can handle them as usual (regular checkboxes) -->
                     <div class="form-group">

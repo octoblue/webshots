@@ -12,6 +12,7 @@ include_once('inc/invoices.php');
 include_once('inc/clients.php');
 include_once('inc/suppliers.php');
 include_once('inc/stock.php');
+include_once('inc/settings.php');
 include_once('inc/products.php');
 include_once('inc/sales.php');
 $conn = Db::dbConnect();

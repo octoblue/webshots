@@ -93,4 +93,14 @@ switch($action){
         header('location : /orders.php');
 
         break;
+
+    case 'settings':
+        foreach($_REQUEST as $key=>$input){
+            if($key != 'action'){
+                mysqli_query($conn, "UPDATE `settings` SET `value`=" . $input . " WHERE `name` = '" . $key . "'");
+            }
+        }
+        header('location: /settings.php');
+
+        break;
 }

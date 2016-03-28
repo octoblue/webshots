@@ -75,9 +75,9 @@ switch($action){
         break;
 
     case 'insert_client':
-        $sql = "INSERT INTO `clients`(`name`, `e-mail`, `tel`, `cell`, `address`) VALUES (
+        $sql = "INSERT INTO `clients`(`name`, `e-mail`, `tel`, `cell`, `address`, `note`) VALUES (
                 '" . $_REQUEST['name'] . "', '" . $_REQUEST['email'] . "', '" . $_REQUEST['tel'] . "', '" . $_REQUEST['cell'] ."',
-                '" . $_REQUEST['address'] ."'
+                '" . $_REQUEST['address'] ."', '" . $_REQUEST['note'] . "'
                 )";
         mysqli_query($conn, $sql);
         header('location : /client.php?clientId=' . mysqli_insert_id($conn));

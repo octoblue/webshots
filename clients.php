@@ -9,20 +9,16 @@ $clients = Client::getClients();
     <?php include 'inc/page_head.php'; ?>
     <div class="row text-center">
         <div class="col-sm-6 col-lg-3">
-            <a href="client_new.php" class="widget widget-hover-effect2">
                 <div class="widget-extra themed-background-success">
                     <h4 class="widget-content-light"><strong>Add New</strong> Client</h4>
                 </div>
                 <div class="widget-extra-full"><span class="h2 text-success animation-expandOpen"><i class="fa fa-plus"></i></span></div>
-            </a>
         </div>
         <div class="col-sm-6 col-lg-3">
-            <a href="javascript:void(0)" class="widget widget-hover-effect2">
                 <div class="widget-extra themed-background-danger">
                     <h4 class="widget-content-light"><strong>Number of</strong> Clients</h4>
                 </div>
                 <div class="widget-extra-full"><span class="h2 text-danger animation-expandOpen"><?php echo count($clients); ?></span></div>
-            </a>
         </div>
         <div class="col-sm-6 col-lg-3">
             <a href="javascript:void(0)" class="widget widget-hover-effect2">
@@ -74,6 +70,7 @@ $clients = Client::getClients();
                     <td class="text-center">
                         <div class="btn-group btn-group-xs">
                             <a href="/client_new.php?clientId=<?php echo $client->id; ?>" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                            <a href="/client_invoices.php?clientId=<?php echo $client->id; ?>" data-toggle="tooltip" title="Invoices" class="btn btn-default"><i class="fa fa-eye"></i></a>
                             <a href="/api.php?action=client_delete&clientId=<?php echo $client->id; ?>" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
                         </div>
                     </td>

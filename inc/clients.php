@@ -9,7 +9,7 @@ class Client {
         $conn = Db::dbConnect();
         $sql = "SELECT * FROM clients WHERE id = " . $id;
         $query = mysqli_query($conn, $sql);
-        return mysqli_fetch_object($query);
+        return mysqli_fetch_object($query, 'Client');
     }
 
     public static function getClients($lastOrder = false, $order= 'id', $direction = 'ASC'){
@@ -23,6 +23,10 @@ class Client {
             $array[] = $row;
         }
         return $array;
+    }
+
+    public function invoices(){
+        return Invoice::getInvoices(Array('clientId'=>$this->id));
     }
 
 }

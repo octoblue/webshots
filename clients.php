@@ -9,16 +9,20 @@ $clients = Client::getClients();
     <?php include 'inc/page_head.php'; ?>
     <div class="row text-center">
         <div class="col-sm-6 col-lg-3">
+            <a href="client_new.php" class="widget widget-hover-effect2">
                 <div class="widget-extra themed-background-success">
                     <h4 class="widget-content-light"><strong>Add New</strong> Client</h4>
                 </div>
                 <div class="widget-extra-full"><span class="h2 text-success animation-expandOpen"><i class="fa fa-plus"></i></span></div>
+            </a>
         </div>
         <div class="col-sm-6 col-lg-3">
+            <a href="javascript:void(0)" class="widget widget-hover-effect2">
                 <div class="widget-extra themed-background-danger">
                     <h4 class="widget-content-light"><strong>Number of</strong> Clients</h4>
                 </div>
                 <div class="widget-extra-full"><span class="h2 text-danger animation-expandOpen"><?php echo count($clients); ?></span></div>
+            </a>
         </div>
         <div class="col-sm-6 col-lg-3">
             <a href="javascript:void(0)" class="widget widget-hover-effect2">
@@ -55,6 +59,7 @@ $clients = Client::getClients();
                 <th>Address</th>
                 <th class="hidden-xs text-center">Buys</th>
                 <th class="text-center">Payed</th>
+                <th class="text-center">Note</th>
                 <th class="text-center">Edit</th>
             </tr>
             </thead>
@@ -66,7 +71,8 @@ $clients = Client::getClients();
                     <td><strong><?php if($client->cell!='')echo $client->cell; ?></strong> <?php if($client->tel!='') ?> - <?php echo $client->tel; ?></strong></td>
                     <td><?php echo $client->address; ?></td>
                     <td class="hidden-xs text-center"><?php echo $client->buys; ?></td>
-                    <td class="hidden-xs text-center"><?php echo $client->payed; ?></td>
+                    <td class="hidden-xs text-center"><?php echo $client->payed;?></td>
+                    <td class="hidden-xs text-center"><?php echo $client->note; ?></td>
                     <td class="text-center">
                         <div class="btn-group btn-group-xs">
                             <a href="/client_new.php?clientId=<?php echo $client->id; ?>" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>

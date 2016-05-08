@@ -103,4 +103,12 @@ switch($action){
         header('location: /settings.php');
 
         break;
+
+    case 'ClientPay':
+        $client = Client::getClient($_REQUEST['clientId']);
+        $cash = $client->payed + $_REQUEST['pay'];
+        $sql = "UPDATE `clients` SET `payed`='" . $cash . "' WHERE clientId = " . $client->id;
+        mysqli_query($conn, $sql);
+        header('location : /client_invoices.php?clientId=' . $client->id);
+        break;
 }

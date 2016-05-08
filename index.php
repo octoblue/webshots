@@ -128,12 +128,8 @@
 
 <?php include 'inc/template_scripts.php'; ?>
 
-<!-- Google Maps API + Gmaps Plugin, must be loaded in the page you would like to use maps -->
-<script src="//maps.google.com/maps/api/js?sensor=true"></script>
-<script src="js/helpers/gmaps.min.js"></script>
-
 <!-- Load and execute javascript code used only in this page -->
-<script src="js/pages/index.js"></script>
-<script>$(function(){ Index.init(); });</script>
+<!--<script src="js/pages/index.js"></script>-->
+<!--<script>$(function(){ Index.init(); });</script>-->
 
 <?php include 'inc/template_end.php'; ?>

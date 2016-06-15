@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="example-email-input">Email</label>
                     <div class="col-md-9">
-                        <input type="email" id="example-email-input" name="email" class="form-control" placeholder="Enter Email"  <?php if(is_object($client)){?>value="<?php echo $client->e-mail; ?>"<?php } ?>>
+                        <input type="email" id="example-email-input" name="email" class="form-control" placeholder="Enter Email"  <?php if(is_object($client)){?>value="<?php echo $client->email; ?>"<?php } ?>>
                         <span class="help-block">ex: jhon.smith@webmail.com</span>
                     </div>
                 </div>
@@ -49,6 +49,18 @@
                     <label class="col-md-3 control-label" for="example-text-input">Telephone</label>
                     <div class="col-md-9">
                         <input type="tel" id="example-input" name="tel" class="form-control" placeholder="Enter Tel" <?php if(is_object($client)){?>value="<?php echo $client->tel; ?>"<?php } ?>>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="example-text-input">Username</label>
+                    <div class="col-md-9">
+                        <input type="text" id="example-input" name="user" class="form-control" placeholder="Enter User" <?php if(is_object($client)){?>value="<?php echo $client->username; ?>"<?php } ?>>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="example-text-input">Password</label>
+                    <div class="col-md-9">
+                        <input type="text" id="example-input" name="pass" class="form-control" placeholder="Enter Pass" <?php if(is_object($client)){?>value="<?php echo $client->password; ?>"<?php } ?>>
                     </div>
                 </div>
                 <div class="form-group">

@@ -75,9 +75,9 @@ switch($action){
         break;
 
     case 'insert_client':
-        $sql = "INSERT INTO `clients`(`name`, `e-mail`, `tel`, `cell`, `address`, `note`) VALUES (
+        $sql = "INSERT INTO `clients`(`name`, `email`, `tel`, `cell`, `address`, `username`, `password`, `note`) VALUES (
                 '" . $_REQUEST['name'] . "', '" . $_REQUEST['email'] . "', '" . $_REQUEST['tel'] . "', '" . $_REQUEST['cell'] ."',
-                '" . $_REQUEST['address'] ."', '" . $_REQUEST['note'] . "'
+                '" . $_REQUEST['user'] ."','" . $_REQUEST['pass'] . "', '" . $_REQUEST['address'] ."', '" . $_REQUEST['note'] . "'
                 )";
         mysqli_query($conn, $sql);
         header('location : /client.php?clientId=' . mysqli_insert_id($conn));
@@ -110,5 +110,17 @@ switch($action){
         $sql = "UPDATE `clients` SET `payed`='" . $cash . "' WHERE clientId = " . $client->id;
         mysqli_query($conn, $sql);
         header('location : /client_invoices.php?clientId=' . $client->id);
+        break;
+
+    case 'edit-order':
+        if(!isset($_REQUEST['productId'])) header('location: /order.php');
+        $_SESSION['order'][$_REQUEST['productId']]['quantity'] = $_REQUEST['quant'];
+        $_SESSION['order'][$_REQUEST['productId']]['sell'] = $_REQUEST['sell'];
+        header('location: /order.php');
+        break;
+
+    case 'clear-orders':
+        $_SESSION['order'] = null;
+        header('location: /order.php');
         break;
 }

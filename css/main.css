@@ -1514,6 +1514,58 @@ img.full-bg {
     filter: alpha(opacity=100);
 }
 
+/*Return Cash*/
+.return-cash {
+    position: absolute;
+    top: 200px;
+    right: 0;
+    left: 0;
+    z-index: 9;
+    width: 750px;
+    margin: auto;
+    height: 400px;
+    display: none;
+}
+
+.return-cash .block-title {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.return-cash .original {
+    text-align: center;
+    color: red;
+    font-size: 50px;
+    margin: 0;
+}
+
+.return-cash .cash {
+    margin: auto;
+    border: none;
+    font-size: 50px;
+    color: green;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.return-cash #return {
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+}
+
+.return-cash .btn {
+    margin: auto;
+    display: block;
+}
+
+.return-cash .close {
+    position: absolute;
+    right:10px;
+    top:10px;
+}
+
 /* Gallery */
 .gallery img, .gallery a img, .gallery-image img, a[data-toggle="lightbox-image"] img {
     max-width: 100%;

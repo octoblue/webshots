@@ -14,16 +14,17 @@
     <div class="block">
         <!-- Products Title -->
         <div class="block-title">
-            <h2><i class="fa fa-shopping-cart"></i> <strong>Products</strong></h2>
+            <h2 class="order-page"><i class="fa fa-shopping-cart"></i> <strong>Products</strong></h2>
+            <a href="api.php?action=clear-orders" style="float: right;font-size: 14px;padding: 10px 30px 0 0;">Clear Page</a>
         </div>
         <!-- END Products Title -->
         <!-- Products Content -->
         <div class="table-responsive">
-            <form id="add-task-form" class="push" action="api.php" method="get">
+            <form id="add-task-form" class="push neworders" action="api.php" method="get">
                 <input type="hidden" name="action" value="orders">
                 <div class="input-group input-group-lg">
-                    <input type="text" id="add-task" name="barcode" class="form-control" autofocus style="width: 20%" placeholder="Barcode">
-                    <input type="text" id="add-task" name="serial" class="form-control" style="width: 20%" placeholder="Serial">
+                    <input type="text" id="add-task" name="barcode" class="form-control" style="width: 20%" placeholder="Barcode">
+                    <input type="text" id="add-task" name="serial" class="form-control" autofocus style="width: 20%" placeholder="Serial">
                     <input type="text" id="add-task" name="name" class="form-control" style="width: 20%" placeholder="Name">
                     <input type="text" id="add-task" name="quantity" class="form-control" style="width: 20%" placeholder="Quant.">
                     <input type="text" id="add-task" name="sell" class="form-control" style="width: 20%" placeholder="Sell">
@@ -32,7 +33,7 @@
                     </div>
                 </div>
             </form>
-            <form id="edit-task-form" class="push" action="api.php" method="get">
+            <form id="edit-task-form" class="push order-submit" action="api.php" method="get">
                 <input type="hidden" name="action" value="save">
             <table class="table table-bordered table-vcenter">
                 <thead>
@@ -55,12 +56,12 @@
                     </td>
                     <td><?php echo $order['name']; ?></td>
                     <td><?php echo $order['description']; ?></td>
-                    <td class="text-center"><strong><input type="text" name="quantity-<?php echo $order['id']; ?>" value=" <?php echo $order['quantity']; ?>" style="text-align: center; border: none;" size=5/></strong></td>
+                    <td class="text-center"><strong><input type="text" name="quantity-<?php echo $order['id']; ?>" id="quant" value=" <?php echo $order['quantity']; ?>" style="text-align: center; border: none;" size=5/></strong></td>
                     <td class="text-center" style="color: white" onclick="if(this.style.color == 'white'){this.style.color='black';}else{this.style.color = 'white'}"><strong><?php echo $order['cost']; ?></strong></td>
                     <td class="text-center">
-                        <strong><input type="text" name="sell-<?php echo $order['id']; ?>" value="<?php echo $order['sell']; ?>" style="text-align: center; border: none;"/> </strong>
+                        <strong><input type="text" name="sell-<?php echo $order['id']; ?>" id="sell" value="<?php echo $order['sell']; ?>" style="text-align: center; border: none;"/> </strong>
                         <div class="btn-group btn-group-xs" style="position: absolute">
-                            <a href="#" data-toggle="tooltip" title="" target="_blank" class="btn btn-default" data-original-title="View"><i class="fa fa-eye"></i></a>
+                            <a href="#" data-toggle="tooltip" title="" class="btn btn-default edit-product" data-original-title="Save" data-productId = "<?php echo $order['id'];?>"><i class="fa fa-save"></i></a>
                             <a href="/api.php?action=delete-order&productId=<?php echo $order['id']; ?>" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="Delete"><i class="fa fa-times"></i></a>
                         </div>
                     </td>
@@ -99,13 +100,22 @@
                 </tbody>
             </table>
             <div class="full">
-                <input type="submit" class="btn btn-sm btn-success" style="float: right">
+                <input type="button" class="btn btn-sm btn-success submit-order" value="Submit" style="float: right">
             </div>
                 <input type="hidden" name="total" value="<?php echo $total; ?>" />
                 <input type="hidden" name="totalCost" value="<?php echo $totalCost; ?>" />
                 </form>
         </div>
         <!-- END Products Content -->
+    </div>
+    <div class="return-cash block">
+        <span class="close"><i class="fa fa-close"></i></span>
+        <div class="block-title"> Return Cash </div>
+        <p class="original" data-total="<?php echo $total; ?>"><?php echo $total; ?></p>
+        <input type="text" class="cash" value="<?php echo $total; ?>" onkeyup="document.getElementById('return').innerHTML =  this.value - <?php echo $total; ?>;">
+        <p id="return">0</p>
+        USD: <input type="checkbox" name="currency" value="on" id="currency" data-rate="<?php echo Setting::getSettingByName('usdrate')->value; ?>">
+        <input type="button" class="btn btn-sm btn-success" value="Submit">
     </div>
     <?php include 'inc/template_scripts.php'; ?>
 <?php include 'inc/template_end.php'; ?>

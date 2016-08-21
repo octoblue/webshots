@@ -82,7 +82,7 @@
                     <td colspan="5" class="text-right text-uppercase"><strong>Client:</strong></td>
                     <td class="text-right">
                         <select id="product-category" name="client" class="select-chosen" data-placeholder="Choose Client.." style="width: 250px; display: none;">
-                            <option value="1"></option><!-- Required for data-placeholder attribute to work with Chosen plugin -->
+                            <option value="1">Cash Sale</option><!-- Required for data-placeholder attribute to work with Chosen plugin -->
                             <?php
                             foreach(Client::getClients() as $client){
                                ?>

@@ -35,4 +35,23 @@ public function getStock($id){
         return $data;
     }
 
+    public static function outOfStock($count = false){
+        $conn = Db::dbConnect();
+        if($count) {
+            $sql = "SELECT count(*) as total FROM `stock` WHERE `quantity` <= `minQuant`";
+            $query = mysqli_query($conn, $sql);
+            $object = mysqli_fetch_object($query);
+            return $object->total   ;
+        }else{
+            $sql = "SELECT * FROM `stock` WHERE `quantity` <= `minQuant`";
+            $query = mysqli_query($conn, $sql);
+            $data = Array();
+            while($row = mysqli_fetch_object($query, 'Client')){
+                $data[] = $row;
+            }
+            return $data;
+        }
+
+    }
+
 }

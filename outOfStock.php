@@ -4,45 +4,17 @@
 
 <?php
 $conn = Db::dbConnect();
-$stock = Stock::getStocks();
-$ostock = Stock::outOfStock(true);
+$stock = Stock::outOfStock();
 ?>
 
     <div id="page-content" style="margin-top: -20px; min-height: 1000px;">
         <a href="/index.php" class="timeline-icon" style="font-size: 20px"><i class="fa fa-home"></i>Home</a>
-
-        <div class="row text-center">
-            <div class="col-sm-6 col-lg-4">
-                <a href="stock.php" class="widget widget-hover-effect2">
-                    <div class="widget-extra themed-background-success">
-                        <h4 class="widget-content-light"><strong>Insert</strong> Stock</h4>
-                    </div>
-                    <div class="widget-extra-full"><span class="h2 text-success animation-expandOpen"><i class="fa fa-plus"></i></span></div>
-                </a>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-                <a href="javascript:void(0)" class="widget widget-hover-effect2">
-                    <div class="widget-extra themed-background">
-                        <h4 class="widget-content-light"><strong>All</strong> Stocks</h4>
-                    </div>
-                    <div class="widget-extra-full"><span class="h2 animation-expandOpen"><?=count($stock)?></span></div>
-                </a>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-                <a href="outOfStock.php" class="widget widget-hover-effect2">
-                    <div class="widget-extra themed-background-danger">
-                        <h4 class="widget-content-light"><strong>Out Of</strong> Stock</h4>
-                    </div>
-                    <div class="widget-extra-full"><span class="h2 themed-color-dark animation-expandOpen"><?=$ostock?></span></div>
-                </a>
-            </div>
-        </div>
         <div class="block full">
             <!-- All Orders Title -->
             <div class="block-title">
                 <div class="block-options pull-right">
                 </div>
-                <h2><strong>All</strong> Stocks</h2>
+                <h2><strong>Out Of</strong> Stock</h2>
             </div>
             <!-- END All Orders Title -->
 

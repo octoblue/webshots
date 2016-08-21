@@ -1,6 +1,11 @@
 <?php include 'inc/db.php';?>
 <?php include 'inc/config.php'; ?>
 <?php include 'inc/template_start.php'; ?>
+<?php
+if(isset($_REQUEST['stockId'])){
+    $stock = Stock::getStock($_REQUEST['stockId']);
+}
+?>
 
 <div id="page-content" style="margin-top: -20px; min-height: 1000px;">
     <?php include 'inc/page_head.php'; ?>
@@ -15,47 +20,55 @@
 
             <!-- Basic Form Elements Content -->
             <form action="api.php" method="get" class="form-horizontal form-bordered">
-                <input type="hidden" name="action" value="insert_stock">
+                <?php if(!empty($stock)){ ?> <input type="hidden" name="action" value="update_stock"> <?php } else { ?>
+                <input type="hidden" name="action" value="insert_stock"><?php } ?>
+                <?php if(!empty($stock)){ ?> <input type="hidden" name="id" value="<?php echo $_REQUEST['stockId'];?>"><?php } ?>
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="example-text-input">Product Name</label>
                     <div class="col-md-9">
-                        <input type="text" id="example-text-input" name="name" class="form-control" placeholder="Text">
+                        <input type="text" id="example-text-input" <?php if(!empty($stock)){?> value="<?php echo $stock->name; ?>"<?php }?>name="name" class="form-control" placeholder="Text">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="example-text-input">Barcode</label>
                     <div class="col-md-9">
-                        <input type="text" id="example-text-input" name="barcode" class="form-control" placeholder="Barcode">
+                        <input type="text" id="example-text-input" <?php if(!empty($stock)){?> value="<?php echo $stock->barcode; ?>"<?php }?>name="barcode" class="form-control" placeholder="Barcode">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="example-text-input">Serial</label>
                     <div class="col-md-9">
-                        <input type="text" id="example-text-input" name="serial" class="form-control" placeholder="Serial">
+                        <input type="text" id="example-text-input" <?php if(!empty($stock)){?> value="<?php echo $stock->serial; ?>"<?php }?>name="serial" class="form-control" placeholder="Serial">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="example-text-input">Description</label>
                     <div class="col-md-9">
-                        <textarea id="textarea-ckeditor" name="description" class="ckeditor" ></textarea>
+                        <textarea id="textarea-ckeditor" name="description" class="ckeditor" ><?php if(!empty($stock)){ echo $stock->description;}?></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="example-text-input">Cost</label>
                     <div class="col-md-9">
-                        <input type="text" id="example-text-input" name="cost" class="form-control" placeholder="Cost">
+                        <input type="text" id="example-text-input" name="cost" <?php if(!empty($stock)){?> value="<?php echo $stock->cost; ?>"<?php }?>class="form-control" placeholder="Cost">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="example-text-input">Sell</label>
                     <div class="col-md-9">
-                        <input type="text" id="example-text-input" name="sell" class="form-control" placeholder="Sell">
+                        <input type="text" id="example-text-input" name="sell" <?php if(!empty($stock)){?> value="<?php echo $stock->sell; ?>"<?php }?>class="form-control" placeholder="Sell">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="example-text-input">Quantity</label>
                     <div class="col-md-9">
-                        <input type="text" id="example-text-input" name="quant" class="form-control" placeholder="Quantity">
+                        <input type="text" id="example-text-input" name="quant" <?php if(!empty($stock)){?> value="<?php echo $stock->quantity; ?>"<?php }?>class="form-control" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="example-text-input">Min. Quantity</label>
+                    <div class="col-md-9">
+                        <input type="text" id="example-text-input" name="minQuant" <?php if(!empty($stock)){?> value="<?php echo $stock->minQuant; ?>"<?php }?>class="form-control" placeholder="Quantity">
                     </div>
                 </div>
                 <div class="form-group">
@@ -66,7 +79,7 @@
                             <?php
                             foreach(Supplier::getSuppliers() as $client){
                                 ?>
-                                <option value="<?php echo $client->id ?>"><?php echo $client->name; ?></option>
+                                <option value="<?php echo $client->id ?>" <?php if($client->name == $stock->supplier){echo('selected');}?>><?php echo $client->name; ?></option>
                                 <?php
                             }
                             ?>

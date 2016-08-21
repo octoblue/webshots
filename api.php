@@ -84,10 +84,18 @@ switch($action){
         break;
 
     case 'insert_stock':
-        $sql = "INSERT INTO `stock`(`name`, `barcode`, `serial`, `description`, `cost`, `sell`, `quantity`, `supplier`) VALUES (
+        $sql = "INSERT INTO `stock`(`name`, `barcode`, `serial`, `description`, `cost`, `sell`, `quantity`, `minQuant`, `supplier`) VALUES (
                 '" . $_REQUEST['name'] . "', '" . $_REQUEST['barcode'] . "', '" . $_REQUEST['serial'] . "', '" . $_REQUEST['description'] . "',
-                '" . $_REQUEST['cost'] . "', '" . $_REQUEST['sell'] . "', '" . $_REQUEST['quant'] . "', '" . $_REQUEST['supplier'] . "'
+                '" . $_REQUEST['cost'] . "', '" . $_REQUEST['sell'] . "', '" . $_REQUEST['quant'] . "', '" . $_REQUEST['minQuant'] . "', '" . $_REQUEST['supplier'] . "'
                 )";
+
+        mysqli_query($conn, $sql);
+        header('location : /orders.php');
+
+        break;
+
+    case 'update_stock':
+        $sql = "UPDATE `stock` SET `name` =  '" . $_REQUEST['name'] . "', `barcode`='" . $_REQUEST['barcode'] . "', `serial`= '" . $_REQUEST['serial'] . "', `description`='" . $_REQUEST['description'] . "', `cost`='" . $_REQUEST['cost'] . "', `sell`='" . $_REQUEST['sell'] . "', `quantity`='" . $_REQUEST['quant'] . "', `minQuant`='" . $_REQUEST['minQuant'] . "', `supplier`='" . $_REQUEST['supplier'] . "' WHERE `id`='" . $_REQUEST['id'] . "'";
 
         mysqli_query($conn, $sql);
         header('location : /orders.php');

@@ -28,12 +28,18 @@ var EcomProducts = function() {
             App.datatables();
 
             /* Initialize Datatables */
-            $('#ecom-products').dataTable({
+            var ecomtab = $('#ecom-products');
+            if(ecomtab.attr('data-sort')){
+                var sort = ecomtab.data('sort');
+            }else{
+                var sort = 'desc';
+            }
+            ecomtab.dataTable({
                 columnDefs: [
                     { type: 'date-custom', targets: [4] },
                     { orderable: false, targets: [5] }
                 ],
-                order: [[ 0, "desc" ]],
+                order: [[ 0, sort ]],
                 pageLength: 20,
                 lengthMenu: [[10, 20, 30, -1], [10, 20, 30, 'All']]
             });

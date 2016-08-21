@@ -50,7 +50,7 @@ $clients = Client::getClients();
         <!-- END All Products Title -->
 
         <!-- All Products Content -->
-        <table id="ecom-products" class="table table-bordered table-striped table-vcenter">
+        <table id="ecom-products" class="table table-bordered table-striped table-vcenter" data-sort="asc">
             <thead>
             <tr>
                 <th class="text-center" style="width: 70px;">ID</th>
